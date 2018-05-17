@@ -9,4 +9,4 @@ gravatar:
 gravatar_profile:
   size: 230
 category:
-  length: 10
+  length: 255

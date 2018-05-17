@@ -1,0 +1,13 @@
+<% provide :title, t(".list") %>
+<h1><%= t ".list" %></h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= t ".category" %></th>
+    </tr>
+  </thead>
+  <tbody>
+      <%= render @categories %>
+  </tbody>
+</table>
+
