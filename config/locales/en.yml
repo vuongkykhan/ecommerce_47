@@ -1,0 +1,89 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  layouts:
+    header:
+      home: "Home"
+      about: "About"
+      help: "Help"
+      contact: "Contact"
+      signin: "Signin"
+      signup: "Signup"
+      logo: "Ecommerce"
+    footer:
+      copy: "Copyright vuongkykhan all right reserved."
+    application:
+      base_title: "Ecomerces"
+  static_pages:
+    home:
+      title: "Home"
+      hello: "Hello, welcome to my ecommerce application"
+      category: "Category"
+      sub_category: "Sub Category"
+      learn_more: "Learn more"
+      product_title: "YZ™ LED Light Up Shoes"
+      product_description: "Lorem ipsum dolor sit amet, consectetur adipisicing
+      elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua."
+      price: "Price: 50$"
+      add_cart: "Add to cart"
+    about:
+      about: "About Page"
+    contact:
+      contact: "Contact page"
+    help:
+      help: "Help page"
+    show:
+      product: "Product"
+      product_title: "Original Version of Some product name"
+      dolar: "$ "
+      price: "299"
+      description: "Description"
+      product_description: "Here goes description consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua."
+      quantity: "Quantity:"
+      option: " 1 "
+      buy: "buy now"
+      add_to_cart: "add to cart"
+    cart:
+      cart: "Cart"
+      product: "Product"
+      price: "Price"
+      quantity: "Quantity"
+      subtotal: "Subtotal"
+      product_title: "Product title"
+      product_description: "Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet."
+      unit_price: "$1.99"
+      subtotal_price: "1.99"
+      total: "Total 1.99"
+      continue_shopping: "Continue Shopping"
+      checkout: "Checkout"
+
+
