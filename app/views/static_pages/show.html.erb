@@ -1,0 +1,44 @@
+<% provide :title, t(".product") %>
+<div class="card">
+  <div class="row">
+    <aside class="col-sm-5 border-right">
+      <article class="gallery-wrap">
+        <div class="img-big-wrap">
+          <div> <a href="#"><img src="https://cdn.shopify.com/s/files/1/1373/3003/products/light-up-led-shoes-yeezy-black7.jpg?v=1505913439"></a></div>
+        </div>
+      </article>
+    </aside>
+    <aside class="col-sm-7">
+      <article class="card-body p-5">
+        <h3 class="title mb-3"><%= t ".product_title" %></h3>
+        <p class="price-detail-wrap">
+          <span class="price h3 text-warning">
+            <span class="currency"><%= t ".dolar" %></span><span class="num"><%= t ".price" %></span>
+          </span>
+        </p>
+        <dl class="item-property">
+          <dt><%= t ".description" %></dt>
+          <dd>
+            <p><%= t ".product_description" %></p>
+          </dd>
+        </dl>
+      <hr>
+        <div class="row">
+          <div class="col-sm-5">
+            <dl class="param param-inline">
+              <dt><%= t ".quantity" %></dt>
+              <dd>
+                <select class="form-control form-control-sm" style="width:70px;">
+                  <option><%= t ".option" %></option>
+                </select>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <hr>
+        <%= link_to t(".buy"), cart_path, class: "btn btn-lg btn-primary text-uppercase" %>
+        <%= link_to t(".add_to_cart"), cart_path, class: "btn btn-lg btn-outline-primary text-uppercase" %>
+      </article>
+    </aside>
+  </div>
+</div>
