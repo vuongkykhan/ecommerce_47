@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   resources :categories, only: :index
   namespace :admin do
     resources :categories
+    resources :products
   end
 end
