@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_17_112156) do
+ActiveRecord::Schema.define(version: 2018_05_21_091519) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -18,34 +18,25 @@ ActiveRecord::Schema.define(version: 2018_05_17_112156) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password_digest"
-    t.string "address"
-    t.string "city"
-    t.string "state"
-    t.string "country"
-    t.boolean "admin"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "order_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "order_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "product_id"
     t.bigint "order_id"
-    t.decimal "unit_price", precision: 12, scale: 3
     t.integer "quantity"
+    t.decimal "unit_price", precision: 12, scale: 3
     t.decimal "total_price", precision: 12, scale: 3
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["order_id"], name: "index_order_details_on_order_id"
-    t.index ["product_id"], name: "index_order_details_on_product_id"
+    t.index ["order_id"], name: "index_order_items_on_order_id"
+    t.index ["product_id"], name: "index_order_items_on_product_id"
   end
 
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "customer_name"
+    t.string "customer_address"
+    t.string "customer_phone"
+    t.string "customer_city"
+    t.string "customer_country"
     t.bigint "user_id"
-    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_orders_on_user_id"
@@ -53,9 +44,9 @@ ActiveRecord::Schema.define(version: 2018_05_17_112156) do
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
-    t.text "description"
-    t.decimal "unit_price", precision: 12, scale: 3
+    t.decimal "price", precision: 12, scale: 3
     t.string "image"
+    t.integer "quantity"
     t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -67,12 +58,24 @@ ActiveRecord::Schema.define(version: 2018_05_17_112156) do
     t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "product_id"
-    t.integer "user_id"
   end
 
-  add_foreign_key "order_details", "orders"
-  add_foreign_key "order_details", "products"
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password_digest"
+    t.string "address"
+    t.string "city"
+    t.string "phone"
+    t.string "country"
+    t.integer "role", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+  end
+
+  add_foreign_key "order_items", "orders"
+  add_foreign_key "order_items", "products"
   add_foreign_key "orders", "users"
   add_foreign_key "products", "categories"
 end
