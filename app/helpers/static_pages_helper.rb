@@ -1,6 +1,6 @@
 module StaticPagesHelper
   def full_title page_title
-    base_title = "Ecomerces"
+    base_title = t ".base_title"
     if page_title.blank?
       base_title
     else

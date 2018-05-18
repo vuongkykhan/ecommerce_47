@@ -30,6 +30,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+
   layouts:
     header:
       home: "Home"
@@ -39,8 +40,11 @@ en:
       signin: "Signin"
       signup: "Signup"
       logo: "Ecommerce"
+      account: "Account"
     footer:
       copy: "Copyright vuongkykhan all right reserved."
+    application:
+      base_title: "Ecomerces"
   static_pages:
     home:
       title: "Home"
@@ -83,5 +87,26 @@ en:
       total: "Total 1.99"
       continue_shopping: "Continue Shopping"
       checkout: "Checkout"
+  customers:
+    new:
+      create: "Create User"
+      signup: "Sign Up"
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      password_confirm: "Password Confirm"
+      address: "Address"
+      city: "City"
+      state: "State"
+      country: "Country"
+  sessions:
+    new:
+      signin: "Sign In"
+      email: "Email"
+      password: "Password"
+      login: "Log in"
+    create:
+      invalid_login: "Invalid email/password combination"
+
 
 
