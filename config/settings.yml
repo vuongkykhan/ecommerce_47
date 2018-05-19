@@ -2,3 +2,5 @@ gravatar:
   size: 80
 gravatar_profile:
   size: 230
+category:
+  length: 10

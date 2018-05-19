@@ -1,0 +1,24 @@
+<% provide :title, t(".list") %>
+
+<h1><%= t ".list" %></h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Firstname</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @categories.each do |category| %>
+    <tr>
+      <td><%= category.name %></td>
+      <td>
+        <%= link_to t(".edit"), edit_category_path(category), class: "btn btn-primary" %>
+        <%= link_to t(".delete"), category_path(category), method: :delete, data: {confirm: t(".delete_confirm")}, class: "btn btn-danger" %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+

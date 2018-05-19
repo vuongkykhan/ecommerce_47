@@ -1,5 +1,5 @@
 class CustomersController < ApplicationController
-  before_action :find_customer, only: [:edit, :update, :show, :index]
+  before_action :find_customer, only: %i(edit update show index)
   def new
     @customer = Customer.new
   end

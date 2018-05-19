@@ -125,6 +125,24 @@ en:
       login: "Log in"
     create:
       invalid_login: "Invalid email/password combination"
+  categories:
+    new:
+      create: "Create Category"
+      name: "Category Name"
+    create:
+      create_success: "Category created successfully"
+    edit:
+      edit: "Edit Category"
+      name: "Name"
+      submit: "Save Changes"
+    update:
+      update_success: "Category updated successfully"
+    index:
+      list: "Categories List"
+      edit: "Edit"
+      delete: "Delete"
+      delete_confirm: "Are you sure?"
+
 
 
 
