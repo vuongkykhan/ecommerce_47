@@ -3,8 +3,8 @@ class Customer < ApplicationRecord
   validates :name, presence: true, length: {maximum: 50}
   validates :email, presence: true, length: { maximum: 255 },
     format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
-  validates :password, presence: true, length: {minimum: 6}
-  validates :address, :city, :state, :country, presence: true
+  validates :password, presence: true, length: {minimum: 6}, allow_nil: true
+  validates :address, :city, :phone, :country, presence: true
   has_many :orders
   has_many :reviews
   before_save {email.downcase!}

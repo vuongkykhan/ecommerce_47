@@ -97,8 +97,26 @@ en:
       password_confirm: "Password Confirm"
       address: "Address"
       city: "City"
-      state: "State"
+      phone: "Phone"
       country: "Country"
+    create:
+      create_success: "Account created successfully"
+    edit:
+      edit: "Edit profile"
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      password_confirm: "Password Confirm"
+      address: "Address"
+      city: "City"
+      phone: "Phone"
+      country: "Country"
+      update: "Update profile"
+    update:
+      update_success: "Profile updated successfully"
+    show:
+      profile: "Profile"
+      edit_profile: "Edit Profile"
   sessions:
     new:
       signin: "Sign In"

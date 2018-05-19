@@ -22,9 +22,9 @@ ActiveRecord::Schema.define(version: 2018_05_18_062215) do
     t.string "name"
     t.string "email"
     t.string "password_digest"
+    t.string "phone"
     t.string "address"
     t.string "city"
-    t.string "state"
     t.string "country"
     t.boolean "admin"
     t.datetime "created_at", null: false

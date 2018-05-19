@@ -1,0 +1,26 @@
+<%= provide :title, t(".profile") %>
+
+<div class="col-md-8">
+  <div class="well well-sm">
+    <div class="row">
+      <div class="col-md-4">
+        <%= gravatar_for @customer, size: Settings.gravatar_profile.size %>
+      </div>
+      <div class="col-md-8">
+          <h4><%= @customer.name.upcase %></h4>
+          <p>
+            <i class="glyphicon glyphicon-earphone"></i> <%= @customer.phone %>
+            <br>
+            <i class="glyphicon glyphicon-home"></i> <%= @customer.address %>
+            <br>
+            <i class="glyphicon glyphicon-envelope"></i> <%= @customer.email %>
+            <br>
+            <i class="glyphicon glyphicon-road"></i> <%= @customer.city %>
+            <br>
+            <i class="glyphicon glyphicon-globe"></i> <%= @customer.country %>
+          </p>
+          <%= link_to t(".edit_profile"), edit_customer_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>
