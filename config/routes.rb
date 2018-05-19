@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'products/new'
   get "sessions/new"
   root "static_pages#home"
   get "/contact", to: "static_pages#contact"
@@ -12,4 +13,5 @@ Rails.application.routes.draw do
   delete "/signout", to: "sessions#destroy"
   resources :customers
   resources :categories
+  resources :products
 end

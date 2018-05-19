@@ -142,7 +142,16 @@ en:
       edit: "Edit"
       delete: "Delete"
       delete_confirm: "Are you sure?"
-
+  products:
+    new:
+      create: "Create New Product"
+      category: "Category"
+      title: "Product Title"
+      description: "Description"
+      unit_price: "Unit Price"
+      image: "Image"
+    create:
+      create_success: "Product created successfully"
 
 
 
