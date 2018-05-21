@@ -15,6 +15,9 @@ gem "bootsnap", ">= 1.1.0", require: false
 gem "rubocop", "~> 0.49.1", require: false
 gem "bootstrap-sass", "3.3.7"
 gem "font-awesome-rails"
+gem "bcrypt", "3.1.12"
+gem "jquery-rails"
+gem "config"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

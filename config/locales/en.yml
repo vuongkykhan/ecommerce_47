@@ -30,6 +30,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  shared:
+    error_messages:
+      contains_error: "The form contain"
+      error: "error"
   layouts:
     header:
       home: "Home"
@@ -39,6 +43,7 @@ en:
       signin: "Signin"
       signup: "Signup"
       logo: "Ecommerce"
+      account: "Account"
     footer:
       copy: "Copyright vuongkykhan all right reserved."
     application:
@@ -85,5 +90,44 @@ en:
       total: "Total 1.99"
       continue_shopping: "Continue Shopping"
       checkout: "Checkout"
+  users:
+    form:
+      submit: "Submit"
+    new:
+      signup: "Sign Up"
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      password_confirm: "Password Confirm"
+      address: "Address"
+      city: "City"
+      phone: "Phone"
+      country: "Country"
+    create:
+      create_success: "Account created successfully"
+    edit:
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      password_confirm: "Password Confirm"
+      address: "Address"
+      city: "City"
+      phone: "Phone"
+      country: "Country"
+      update: "Update profile"
+    update:
+      update_success: "Profile updated successfully"
+    show:
+      profile: "Profile"
+      edit_profile: "Edit Profile"
+  sessions:
+    new:
+      signin: "Sign In"
+      email: "Email"
+      password: "Password"
+      login: "Log in"
+    create:
+      invalid_login: "Invalid email/password combination"
+
 
 
