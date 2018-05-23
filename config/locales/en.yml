@@ -24,11 +24,6 @@ en:
       category: "Category"
       sub_category: "Sub Category"
       learn_more: "Learn more"
-      product_title: "YZ™ LED Light Up Shoes"
-      product_description: "Lorem ipsum dolor sit amet, consectetur adipisicing
-      elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua."
-      price: "Price: 50$"
-      add_cart: "Add to cart"
     about:
       about: "About Page"
     contact:
@@ -59,6 +54,8 @@ en:
       total: "Total 1.99"
       continue_shopping: "Continue Shopping"
       checkout: "Checkout"
+    product:
+      add_cart: "Add to cart"
   users:
     form:
       submit: "Submit"
@@ -114,7 +111,6 @@ en:
         submit: "Submit"
       new:
         create: "Create Category"
-        name: "Category Name"
       create:
         create_success: "Category created successfully"
       edit:
@@ -131,3 +127,18 @@ en:
         edit: "Edit"
         delete: "Delete"
         delete_confirm: "Are you sure?"
+    products:
+      index:
+        list: "Product List"
+      form:
+        category: "Categories"
+        name: "Name"
+        image: "Image"
+        price: "Price"
+        quantity: "Quantity"
+        submit: "Submit"
+        select: "Select a category"
+      new:
+        create: "Create Product"
+      create:
+        create_success: "Product created successfully"
