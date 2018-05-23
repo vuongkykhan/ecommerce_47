@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   get "/help", to: "static_pages#help"
   get "/about", to: "static_pages#about"
   get "/show", to: "static_pages#show"
-  get "/cart", to: "static_pages#cart"
   get "/signup", to: "users#new"
   get "/signin", to: "sessions#new"
   post "/signin", to: "sessions#create"
@@ -16,4 +15,6 @@ Rails.application.routes.draw do
     resources :categories
     resources :products
   end
+  resources :carts, only: :index
+  get "add_cart/:id_product", to: "carts#add_cart", as: :add_cart
 end
