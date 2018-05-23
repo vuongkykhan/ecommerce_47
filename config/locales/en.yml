@@ -148,3 +148,14 @@ en:
       validate_quantity_fail: "Not enough quantity."
     remove_cart:
       error: "Error occurs!"
+  orders:
+    new:
+      checkout: "Order Page"
+      title: "Purchase order details"
+    form:
+      name: ""
+      submit: "Submit"
+    create:
+      order_success: "Order successfully!"
+      order_fail: "Error occurs!"
+      empty_cart: "Your cart is empty, please select at least 1 product for order."
