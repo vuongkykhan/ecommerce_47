@@ -132,14 +132,19 @@ en:
         create_success: "Product created successfully"
   carts:
     cart_item:
-      currency: "$ %{price}"
-      sub_total_price: "1.99"
+      currency: "$%{price}"
+      image_alt: "Edit Entry"
     index:
+      currency: "$%{price}"
       cart: "Cart"
       product: "Product"
       price: "Price"
       quantity: "Quantity"
       subtotal: "Subtotal"
-      total: "Total: $ 1.99"
+      total: "Total: "
       continue_shopping: "Continue Shopping"
       checkout: "Checkout"
+    update_hard_cart:
+      validate_quantity_fail: "Not enough quantity."
+    remove_cart:
+      error: "Error occurs!"

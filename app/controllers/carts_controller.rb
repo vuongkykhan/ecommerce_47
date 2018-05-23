@@ -26,7 +26,26 @@ class CartsController < ApplicationController
     redirect_to carts_url
   end
 
+  def update_hard_cart
+    return render_validate_fail unless validate_quantity_cart @product, params[:quantity].to_i, true
+    session[:cart][@product.id.to_s] = params[:quantity].to_i if session[:cart].key?(@product.id.to_s)
+    redirect_to carts_url
+  end
+
   private
+
+  def validate_quantity_cart product, quantity, update_hard = false
+    if update_hard || !session[:cart].key?(@product.id.to_s)
+      product.quantity >= quantity
+    else
+      product.quantity >= (quantity + session[:cart][@product.id.to_s])
+    end
+  end
+
+  def render_validate_fail
+    flash[:danger] = t ".validate_quantity_fail"
+    redirect_to carts_url
+  end
 
   def find_product
     @product = Product.find_by id: params[:id_product]
