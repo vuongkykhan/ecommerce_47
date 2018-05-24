@@ -13,6 +13,7 @@ en:
       signup: "Signup"
       logo: "Ecommerce"
       account: "Account"
+      cart: "Shopping Cart"
     footer:
       copy: "Copyright vuongkykhan all right reserved."
     application:
@@ -41,19 +42,6 @@ en:
       option: " 1 "
       buy: "buy now"
       add_to_cart: "add to cart"
-    cart:
-      cart: "Cart"
-      product: "Product"
-      price: "Price"
-      quantity: "Quantity"
-      subtotal: "Subtotal"
-      product_title: "Product title"
-      product_description: "Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet."
-      unit_price: "$1.99"
-      subtotal_price: "1.99"
-      total: "Total 1.99"
-      continue_shopping: "Continue Shopping"
-      checkout: "Checkout"
     product:
       add_cart: "Add to cart"
   users:
@@ -142,3 +130,16 @@ en:
         create: "Create Product"
       create:
         create_success: "Product created successfully"
+  carts:
+    cart_item:
+      currency: "$ %{price}"
+      sub_total_price: "1.99"
+    index:
+      cart: "Cart"
+      product: "Product"
+      price: "Price"
+      quantity: "Quantity"
+      subtotal: "Subtotal"
+      total: "Total: $ 1.99"
+      continue_shopping: "Continue Shopping"
+      checkout: "Checkout"
