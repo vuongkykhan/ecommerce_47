@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   has_many :orders
+  has_many :order_items, through: :orders
   has_many :reviews
   validates :name, presence: true, length: {maximum: Settings.name.length}
   validates :email, presence: true, length: { maximum: Settings.email.length },

@@ -11,8 +11,8 @@
   </td>
   <td data-th="Price" class="price"><%= t ".currency", price: product.price %></td>
   <td data-th="Quantity">
-    <input type="number" class="form-control text-center quantity" 
-      min="<%= Settings.quantity.default %>" max="<%= product.quantity %>" 
+    <input type="number" class="form-control text-center quantity"
+      min="<%= Settings.quantity.default %>" max="<%= product.quantity %>"
       value="<%= product.quantity_in_cart %>" data-product="<%= product.id %>">
   </td>
   <td data-th="Subtotal" class="text-center subtotal">
