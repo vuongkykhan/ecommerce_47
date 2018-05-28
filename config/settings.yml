@@ -18,3 +18,5 @@ product_description:
   length: 20
 quantity:
   default: 1
+image:
+  size: "50x50"
