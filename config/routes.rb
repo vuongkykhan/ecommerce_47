@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   get "/signin", to: "sessions#new"
   post "/signin", to: "sessions#create"
   delete "/signout", to: "sessions#destroy"
-  resources :users
+  resources :users do
+    resources :orders
+  end
   resources :categories, only: :index
   namespace :admin do
     resources :categories
