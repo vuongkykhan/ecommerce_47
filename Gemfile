@@ -22,6 +22,8 @@ gem "will_paginate", "3.1.6"
 gem "bootstrap-will_paginate", "1.0.0"
 gem "carrierwave", "1.2.2"
 gem "faker", "1.7.3"
+gem "rails-assets-sweetalert2", "~> 5.1.1", source: "https://rails-assets.org"
+gem "sweet-alert2-rails"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

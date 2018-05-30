@@ -5,6 +5,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
           <%= link_to carts_path do %>
+          <span class="badge" id="number_product_cart"><%= session[:cart].size %></span>
             <%= t ".cart" %> <i class="glyphicon glyphicon-shopping-cart"></i>
           <% end %>
         </li>

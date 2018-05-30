@@ -148,6 +148,9 @@ en:
       validate_quantity_fail: "Not enough quantity."
     remove_cart:
       error: "Error occurs!"
+    add_cart:
+      alert_success: "The product has been added to cart."
+      alert_fail: "Error occurs!"
   orders:
     new:
       checkout: "Order Page"
