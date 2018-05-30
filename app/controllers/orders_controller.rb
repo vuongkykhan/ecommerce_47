@@ -1,8 +1,9 @@
 class OrdersController < ApplicationController
-  def index
-    @orders = current_user.orders.newest
-      .paginate page: params[:page], per_page: Settings.paginate.per_page
-  end
+  before_action :find_order, only: :cancel
+  before_action :load_orders, only: %i(cancel index)
+  before_action :check_cart_empty, only: :create
+
+  def index; end
 
   def new
     @order = Order.new
@@ -11,25 +12,35 @@ class OrdersController < ApplicationController
   def create
     ActiveRecord::Base.transaction do
       @order = Order.new order_params
-      if @order.save
-        return redirect_if_cart_empty unless session[:cart].present?
-        @producs_of_current_cart = Product.load_product_by_ids session[:cart].keys
-        @producs_of_current_cart.each do |product|
+      if @order.save!
+        producs_of_current_cart = Product.load_product_by_ids session[:cart].keys
+
+        producs_of_current_cart.each do |product|
+
           product.quantity_in_cart = session[:cart][product.id.to_s]
           unit_price = (product.price).to_i
           total_price = product.quantity_in_cart * unit_price
-          @order.order_items.save!(product_id: product.id,
-            quantity: product.quantity_in_cart,
-            unit_price: unit_price,
+
+          order_item = OrderItem.new(order_id: @order.id, product_id: product.id,
+            quantity: product.quantity_in_cart, unit_price: unit_price,
             total_price: total_price)
+          order_item.save!      
+          update_product_quantity @order
+          create_order_success
         end
-        flash[:success] = t ".order_success"
-        session[:cart] = nil
-        redirect_to root_url
-      else
-        flash[:danger] = t ".order_fail"
-        render :new
       end
+    end
+    rescue
+      flash[:danger] = t ".order_fail"
+      render :new      
+  end
+
+  def cancel
+    @order.cancelled!
+    rollback_quantity @order
+    respond_to do |format|
+      format.json {}
+      format.js {}
     end
   end
 
@@ -43,5 +54,37 @@ class OrdersController < ApplicationController
   def redirect_if_cart_empty
     flash[:danger] = t ".empty_cart"
     redirect_to carts_url
+  end
+
+  def update_product_quantity order
+    order.order_items.each do |detail|
+      detail.product.decrement!(:quantity, detail.quantity) if detail.persisted?
+    end
+  end
+
+  def find_order
+    @order = Order.find_by id: params[:id_order]
+    valid_object @order
+  end
+
+  def rollback_quantity order
+    order.order_items.each do |detail|
+      detail.product.increment!(:quantity, detail.quantity) if detail.persisted?
+    end
+  end
+
+  def load_orders
+    @orders = current_user.orders.newest
+      .paginate page: params[:page], per_page: Settings.paginate.per_page
+  end
+
+  def check_cart_empty
+    return redirect_if_cart_empty if (session[:cart].empty? || session[:cart].size == Settings.quantity.zero)
+  end
+
+  def create_order_success
+    flash[:success] = t ".order_success"
+    session[:cart] = {}
+    redirect_to root_url
   end
 end

@@ -18,6 +18,7 @@ product_description:
   length: 20
 quantity:
   default: 1
+  zero: 0
 image:
   size: "50x50"
 paginate:
