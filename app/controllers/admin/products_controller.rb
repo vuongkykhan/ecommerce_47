@@ -1,12 +1,11 @@
 module Admin
   class ProductsController < ApplicationController
+    before_action :load_products, only: :index
     before_action :find_product, except: %i(index new create)
     before_action :load_categories, except: %i(index destroy)
+    before_action :load_orders_with_in_progress, only: :destroy
 
-    def index
-      @products = Product.load_product.order_by_id
-        .paginate page: params[:page], per_page: Settings.paginate.per_page
-    end
+    def index; end
 
     def new
       @product = Product.new
@@ -32,6 +31,21 @@ module Admin
       end
     end
 
+    def destroy
+      ActiveRecord::Base.transaction do
+        if @orders.present?
+          @orders.each do |item|
+            item.rejected!
+            OrderMailer.reject_order(item).deliver_now
+          end
+        end
+        @product.inactive!
+        respond_success
+      end
+    rescue
+      respond_error
+    end
+
     private
 
     def product_params
@@ -41,6 +55,33 @@ module Admin
     def find_product
       @product = Product.find_by id: params[:id]
       valid_object @product
+    end
+
+    def load_products
+      @products = Product.active.order_by_id
+        .paginate page: params[:page], per_page: Settings.paginate.per_page
+    end
+
+    def load_orders_with_in_progress
+      @orders = Order.by_product_id params[:id]
+    end
+
+    def respond_error
+      respond_to do |format|
+        format.json{render json: {message: t ("error")},
+          status: :unprocessable_entity}
+        format.html{}
+        format.js
+      end
+    end
+
+    def respond_success
+      load_products
+      respond_to do |format|
+        format.json{}
+        format.html{}
+        format.js
+      end
     end
   end
 end

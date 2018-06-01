@@ -1,4 +1,5 @@
 <% if @product.present? %>
+  $(".cart_link").attr("href", "<%= carts_path %>");
   swal("<%= t '.alert_success' %>");
   $("#number_product_cart").html("<%= session[:cart].size %>");
   $("#number_product_cart").removeClass("hidden");

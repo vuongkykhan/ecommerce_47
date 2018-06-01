@@ -6,16 +6,18 @@
     <% end %>
   </div>
   <table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= t ".id" %></th>
-      <th><%= t ".name" %></th>
-      <th><%= t ".image" %></th>
-      <th><%= t ".price" %></th>
-      <th class="text-center"><%= t ".quantity" %></th>
-      <th class="text-center"><%= t ".action" %></th>
-    </tr>
-  </thead>
-    <%= render @products %>
+    <thead>
+      <tr>
+        <th><%= t ".id" %></th>
+        <th><%= t ".name" %></th>
+        <th><%= t ".image" %></th>
+        <th><%= t ".price" %></th>
+        <th class="text-center"><%= t ".quantity" %></th>
+        <th class="text-center"><%= t ".action" %></th>
+      </tr>
+    </thead>
+    <tbody id="products">
+      <%= render @products %>
+    </tbody>
   </table>
 </div>

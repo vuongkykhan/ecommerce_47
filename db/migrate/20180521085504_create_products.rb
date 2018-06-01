@@ -5,6 +5,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.decimal :price, precision: 12, scale: 3
       t.string :image
       t.integer :quantity
+      t.integer :del_flash, default: 0
       t.references :category, foreign_key: true
 
       t.timestamps
