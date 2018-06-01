@@ -3,8 +3,7 @@
     <%= image_tag product.image %>
     <div class="caption">
       <h3>
-        <%= link_to truncate(product.name, length: Settings.product_title.length),
-        show_path(product) %>
+        <%= link_to truncate(product.name, length: Settings.product_title.length), product_path(product) %>
       </h3>
       <p><%=truncate(product.description, length: Settings.product_description.length)%></p>
       <p><%= number_to_currency(product.price) %></p>

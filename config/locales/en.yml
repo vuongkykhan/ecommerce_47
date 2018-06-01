@@ -150,6 +150,7 @@ en:
       login_required: "You must login to be continue."
     update_hard_cart:
       validate_quantity_fail: "Not enough quantity."
+      validate_quantity_is_zero: "So luong khong duoc la 0"
     remove_cart:
       error: "Error occurs!"
     add_cart:

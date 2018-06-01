@@ -1,3 +1,4 @@
 <% if @order.cancelled? %>
   $('#cancel-order' + <%= @order.id %>).hide();
+  $('#orders').html('<%= j render @orders %>');
 <% end %>
