@@ -1,0 +1,18 @@
+<tr>
+  <td><%= product.id %></td>
+  <td><%= product.name %></td>
+  <td><%= product.image %></td>
+  <td><%= product.price %></td>
+  <td class="text-center"><%= product.quantity %></td>
+  <td class="text-center">
+    <%= link_to edit_admin_product_path(product), class: "btn btn-info" do %>
+      <i class="fa fa-edit"></i> <%= t ".edit" %>
+    <% end %>
+    <%= link_to admin_product_path(product), method: :delete,
+      data: {confirm: t(".confirm")},
+      class: "btn btn-danger" do %>
+      <i class="fa fa-trash"></i> <%= t ".delete" %>
+    <% end %>
+  </td>
+</tr>
+
