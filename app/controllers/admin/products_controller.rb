@@ -1,5 +1,6 @@
 module Admin
   class ProductsController < ApplicationController
+    before_action :logged_at_admin
     before_action :load_products, only: :index
     before_action :find_product, except: %i(index new create)
     before_action :load_categories, except: %i(index destroy)

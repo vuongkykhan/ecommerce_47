@@ -110,6 +110,7 @@ en:
         list: "Categories List"
         category: "Category"
         action: "Action"
+        login_required: "You must login to be continue."
       form:
         name: "Category name"
         submit: "Submit"
@@ -143,6 +144,7 @@ en:
         quantity: "Quantity"
         action: "Action"
         new: "New Product"
+        login_required: "You must login to be continue."
       product:
         edit: "Edit"
         delete: "Delete"
@@ -177,6 +179,7 @@ en:
         order_status: "Status"
         order_total: "Order Total"
         action: "Action"
+        login_required: "You must login to be continue."
       order:
         show: "Show"
         approve: "Approve"
@@ -205,6 +208,7 @@ en:
         cancle_order: "Cancle Order"
         total_price: "Total Price: "
         currency: "$ %{price}"
+        login_required: "You must login to be continue."
       order_item:
       currency: "$ %{price}"
       order_item:
@@ -223,7 +227,6 @@ en:
       total: "Total: "
       continue_shopping: "Continue Shopping"
       checkout: "Checkout"
-      login_required: "You must login to be continue."
     update_hard_cart:
       validate_quantity_fail: "Not enough quantity."
       validate_quantity_is_zero: "So luong khong duoc la 0"

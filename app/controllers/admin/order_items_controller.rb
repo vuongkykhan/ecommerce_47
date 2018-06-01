@@ -1,5 +1,6 @@
 module Admin
   class OrderItemsController < ApplicationController
+    before_action :logged_at_admin
     before_action :load_order, :load_user, only: :index
 
     def index

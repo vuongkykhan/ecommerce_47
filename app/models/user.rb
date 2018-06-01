@@ -8,6 +8,7 @@ class User < ApplicationRecord
     format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
   validates :password, presence: true, length: {minimum: Settings.password.length}, allow_nil: true
   validates :address, :city, :phone, :country, presence: true
+  enum role: [:member, :admin]
   before_save {email.downcase!}
   has_secure_password
 end

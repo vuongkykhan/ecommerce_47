@@ -7,8 +7,12 @@
       </h3>
       <p><%=truncate(product.description, length: Settings.description.length)%></p>
       <p><%= number_to_currency(product.price) %></p>
-      <p><%= link_to t(".add_cart"), add_cart_path(product), remote: true,
-        method: :get, class: "btn btn-default" %></p>
+      <p>
+        <% if logged_in? %>
+          <%= link_to t(".add_cart"), add_cart_path(product), remote: true,
+            method: :get, class: "btn btn-default" %>
+        <% end %>
+      </p>
     </div>
   </div>
 </div>

@@ -1,5 +1,6 @@
 module Admin
   class CategoriesController < ApplicationController
+    before_action :logged_at_admin
     before_action :find_category, except: %i(index new create)
 
     def index

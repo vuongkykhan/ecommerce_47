@@ -1,5 +1,6 @@
 module Admin
   class OrdersController < ApplicationController
+    before_action :logged_at_admin
     before_action :find_order, only: %i(approve reject)
     before_action :load_orders, only: %i(index approve reject)
 
