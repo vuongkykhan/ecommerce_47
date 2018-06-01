@@ -12,7 +12,6 @@ $dark-red: #ff173c;
 $dark-gray-2: #666;
 $gray94: #f0f0f0;
 
-
 @mixin box_sizing {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -210,6 +209,25 @@ h4 {
 }
 
 .site-content {
+  margin-top: 20px;
+}
+
+.single {
+  padding: 30px 15px;
+  background: $alabaster;
+  border: 1px solid $gray94;
+}
+
+.single h3.side-title {
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 0;
+  font-size: 20px;
+  color: $dark-gray-1;
+  text-transform: uppercase;
+}
+
+.single h3.side-title:after {
   content: '';
   width: 60px;
   height: 1px;
