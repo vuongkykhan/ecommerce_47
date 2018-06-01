@@ -2,11 +2,14 @@ en:
   date:
     format:
       default: "%d/%m/%Y"
+  currency:
+    format: "$ %{price}"
   shared:
     error_messages:
       contains_error: "The form contain"
       error: "error"
       oops: "Oops...."
+      cart_empty: "Your cart is empty!"
   layouts:
     header:
       home: "Home"

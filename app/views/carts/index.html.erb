@@ -21,7 +21,7 @@
       <td colspan="2" class="hidden-xs"></td>
       <td class="total_price">
         <span><%= t ".total" %></span>
-          <%= t ".currency", price: sum_total_price_of_cart.sum %>
+          <%= t "currency.format", price: sum_total_price_of_cart.sum %>
       </td>
       <td>
         <% unless session[:cart].empty? || session[:cart].size == Settings.quantity.zero %>
