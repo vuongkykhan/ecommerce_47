@@ -14,25 +14,22 @@ class OrdersController < ApplicationController
       @order = Order.new order_params
       if @order.save!
         producs_of_current_cart = Product.load_product_by_ids session[:cart].keys
-
         producs_of_current_cart.each do |product|
-
           product.quantity_in_cart = session[:cart][product.id.to_s]
           unit_price = (product.price).to_i
           total_price = product.quantity_in_cart * unit_price
-
-          order_item = OrderItem.new(order_id: @order.id, product_id: product.id,
+          order_item = @order.order_items.new(order_id: @order.id, product_id: product.id,
             quantity: product.quantity_in_cart, unit_price: unit_price,
             total_price: total_price)
-          order_item.save!      
+          order_item.save!
           update_product_quantity @order
           create_order_success
         end
       end
     end
-    rescue
-      flash[:danger] = t ".order_fail"
-      render :new      
+  rescue
+    flash[:danger] = t ".order_fail"
+    render :new
   end
 
   def cancel

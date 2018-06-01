@@ -147,6 +147,7 @@ en:
       total: "Total: "
       continue_shopping: "Continue Shopping"
       checkout: "Checkout"
+      login_required: "You must login to be continue."
     update_hard_cart:
       validate_quantity_fail: "Not enough quantity."
     remove_cart:
