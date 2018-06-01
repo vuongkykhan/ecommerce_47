@@ -23,6 +23,9 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :categories
     resources :products
+    resources :orders, only: :index do
+      resources :order_items, only: :index
+    end
   end
   resources :carts, only: :index
   get "add_cart/:id_product", to: "carts#add_cart", as: :add_cart
