@@ -2,6 +2,7 @@ en:
   date:
     format:
       default: "%d/%m/%Y"
+    date_time: "%d/%m/%Y %H:%M"
   currency:
     format: "$ %{price}"
   shared:
@@ -168,7 +169,9 @@ en:
         orders_list: "Orders List"
         all_orders_list: "List of all orders"
         date: "Date"
-        order_id: "Order ID"
+        customer_name: "Customer Name"
+        customer_address: "Address"
+        customer_phone: "Phone"
         order_status: "Status"
         order_total: "Order Total"
         action: "Action"
@@ -242,7 +245,9 @@ en:
       order_details: "Orders Detail"
       order_history: "My Order History"
       date: "Date"
-      order_id: "Order ID"
+      customer_name: "Customer Name"
+      customer_address: "Address"
+      customer_phone: "Phone"
       order_status: "Status"
       order_total: "Order Total"
     order:

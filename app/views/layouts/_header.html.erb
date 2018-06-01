@@ -9,7 +9,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
           <%= link_to is_empty_cart? ? "#" : carts_path, class: "cart_link" do %>
-            <span class="badge <%= is_empty_cart? ? '' : '' %>" id="number_product_cart">
+            <span class="badge <%= is_empty_cart? ? 'hidden' : '' %>" id="number_product_cart">
               <%= session[:cart].size unless is_empty_cart? %>
             </span>
             <%= t ".cart" %> <i class="glyphicon glyphicon-shopping-cart"></i>
