@@ -10,11 +10,16 @@ gravatar_profile:
   size: 230
 category:
   length: 255
+product:
+  image:
+    size: 2
 product_name:
+  length: 255
+product_description:
   length: 255
 product_title:
   length: 15
-product_description:
+description:
   length: 20
 quantity:
   default: 1
