@@ -1,0 +1,24 @@
+en:
+  date:
+    format:
+      default: "%d/%m/%Y"
+  currency:
+    format: "$ %{price}"
+  order_mailer:
+    subject: "Ecommerce47: Order Status Alert"
+    create_order:
+      dear: "Dear %{user},"
+      message: "Welcome to the Ecommerce47! Your order has been Created success!"
+      info_bill: "This is your order details informataion"
+    cancel_order:
+      dear: "Dear %{user},"
+      message: "Welcome to the Ecommerce47! Your order has been Deleted success!"
+      info_bill: "This is your order details informataion"
+    approve_order:
+      dear: "Dear %{user},"
+      message: "Welcome to the Ecommerce47! Your order has been Approved success!"
+      info_bill: "This is your order details informataion"
+    reject_order:
+      dear: "Dear %{user},"
+      message: "Welcome to the Ecommerce47! Your order has been Rejected success!"
+      info_bill: "This is your order details informataion"

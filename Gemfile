@@ -25,6 +25,7 @@ gem "mini_magick", "4.7.0"
 gem "faker", "1.7.3"
 gem "rails-assets-sweetalert2", "~> 5.1.1", source: "https://rails-assets.org"
 gem "sweet-alert2-rails"
+gem "figaro"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

@@ -280,3 +280,6 @@ en:
       completed: "Completed"
       invoiced: "Invoiced"
   less_than_2mb: "should be less than 2MB"
+  order_mailer:
+    create_order:
+      subject: "Order create"

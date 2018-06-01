@@ -7,6 +7,7 @@ module Admin
 
     def approve
       @order.approved!
+      OrderMailer.approve_order(@order).deliver_now
       respond_to do |format|
         format.json {}
         format.js {}
@@ -15,6 +16,7 @@ module Admin
 
     def reject
       @order.rejected!
+      OrderMailer.reject_order(@order).deliver_now
       respond_to do |format|
         format.json {}
         format.js {}

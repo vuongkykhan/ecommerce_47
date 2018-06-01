@@ -1,0 +1,55 @@
+<p><%= t ".dear", user: @user.name %></p>
+<p><%= t ".message" %></p>
+<br/>
+<h3><%= t ".info_bill" %></h3>
+<div class="container">
+  <div  class="row pad-top-botm client-info">
+    <div class="col-lg-6 col-md-6 col-sm-6">
+      <h4><strong><%= t ".client_info" %></strong></h4>
+      <strong><%= t ".name" %></strong><%= @order.customer_name %>
+      <br />
+      <b><%= t ".address" %></b><%= @order.customer_address %>
+      <br />
+      <b><%= t ".city" %></b><%= @order.customer_city %>
+      <br />
+      <b><%= t ".country" %></b><%= @order.customer_country %>
+      <br />
+      <b><%= t ".call" %></b><%= t ".code" %><%= @order.customer_phone %>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6">
+      <h4><strong><%= t ".payment_details" %></strong></h4>
+      <b><%= t ".bill_amount" %></b> <%= t "currency.format", price: @order.total_price %>
+      <br />
+      <b><%= t ".purchase_date" %></b><%= l @order.created_at, format: t("date.format.default") %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover">
+          <thead>
+            <tr>
+              <th><%= t ".no_number" %></th>
+              <th><%= t ".items" %></th>
+              <th><%= t ".quantity" %></th>
+              <th><%= t ".unit_price" %></th>
+              <th><%= t ".sub_total" %></th>
+             </tr>
+           </thead>
+           <tbody>
+             <% @order.order_items.each do |order_item| %>
+              <tr>
+                <td><%= order_item.id %></td>
+                <td><%= order_item.product_name %></td>
+                <td><%= order_item.quantity %></td>
+                <td><%= t "currency.format", price: order_item.unit_price %></td>
+                <td><%= t "currency.format", price: order_item.total_price %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
