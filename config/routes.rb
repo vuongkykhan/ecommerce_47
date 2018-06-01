@@ -34,4 +34,5 @@ Rails.application.routes.draw do
   get "remove_cart/:id_product", to: "carts#remove_cart", as: :remove_cart
   put "update_hard_cart", to: "carts#update_hard_cart", as: :update_hard_cart
   put "orders/:id_order", to: "orders#cancel", as: :cancel
+  post "products/search", to: "products#search", as: :search_product
 end

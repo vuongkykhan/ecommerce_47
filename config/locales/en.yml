@@ -91,6 +91,9 @@ en:
     index:
       list: "Categories List"
       category: "Category"
+  products:
+    search:
+      alert_fail: "Sorry! we can not find this product."
   admin:
     categories:
       index:
