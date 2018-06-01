@@ -5,7 +5,10 @@ module Admin
     before_action :load_categories, except: %i(index destroy)
     before_action :load_orders_with_in_progress, only: :destroy
 
-    def index; end
+    def index
+      @products = Product.load_product.order_by_id
+        .paginate page: params[:page], per_page: Settings.paginate.per_page
+    end
 
     def new
       @product = Product.new

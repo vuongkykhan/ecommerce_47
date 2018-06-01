@@ -30,6 +30,10 @@ gem "i18n-js"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "rspec-rails"
+  gem "factory_bot_rails"
+  gem "rails-controller-testing"
+  gem "capybara", ">= 2.15", "< 4.0"
 end
 
 group :development do
@@ -40,9 +44,11 @@ group :development do
 end
 
 group :test do
-  gem "capybara", ">= 2.15", "< 4.0"
   gem "selenium-webdriver"
   gem "chromedriver-helper"
+  gem "shoulda-matchers", "~> 3.1", ">= 3.1.2"
+  gem "database_cleaner"
+  gem "simplecov", require: false
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
