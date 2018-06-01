@@ -2,10 +2,10 @@
   <td><%= order.created_at %></td>
   <td><%= order.id %></td>
   <td><%= t "order.status.#{order.status}" %></td>
-  <td><%= t ".total_price" %></td>
+  <td><%= t ".currency", price: order.total_price %></td>
   <td>
     <%= link_to t(".details"), order_order_items_path(current_user, order), class: "btn btn-primary" %>
-    <% if !order.cancelled? %>
+    <% unless order.cancelled? %>
       <%= link_to t(".cancel"), cancel_path(order.id),
       remote: true, method: :put, id: "cancel-order" + order.id.to_s, class: "btn btn-danger" %>
     <% end %>

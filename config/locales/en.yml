@@ -178,6 +178,7 @@ en:
       cancel: "Cancel"
       status: "Status"
       total_price: "Total Price"
+      currency: "$ %{price}"
   order_items:
     index:
       invoice: "Invoice"
@@ -200,6 +201,7 @@ en:
       back: "Back"
       continue_shopping: "Continue Shopping"
       cancle_order: "Cancle Order"
+      currency: "$ %{price}"
     order_item:
       currency: "$ %{price}"
   order:

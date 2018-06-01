@@ -2,7 +2,7 @@ class CartsController < ApplicationController
   before_action :logged_in_user, only: :index
   before_action :set_cart
   before_action :find_product, except: :index
-  before_action :current_cart, only: :index
+  before_action :current_cart, :quantity_in_cart, only: :index
 
   def index; end
 
@@ -17,13 +17,6 @@ class CartsController < ApplicationController
         format.json {}
         format.js
       end
-  end
-
-  def current_cart
-    @producs_of_current_cart = Product.load_product_by_ids session[:cart].keys
-    @producs_of_current_cart.each do |item|
-      item.quantity_in_cart = session[:cart][item.id.to_s]
-    end
   end
 
   def remove_cart

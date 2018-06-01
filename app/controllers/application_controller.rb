@@ -16,4 +16,14 @@ class ApplicationController < ActionController::Base
       redirect_to signin_url
     end
   end
+
+  def current_cart
+    @producs_of_current_cart = Product.load_product_by_ids session[:cart].keys
+  end
+
+  def quantity_in_cart
+    @producs_of_current_cart.each do |item|
+      item.quantity_in_cart = session[:cart][item.id.to_s]
+    end
+  end
 end

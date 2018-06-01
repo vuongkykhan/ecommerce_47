@@ -1,7 +1,9 @@
 <%= form_for @order do |f| %>
   <%= render "shared/error_messages", object: f.object %>
 
-  <%= f.hidden_field :user_id, value: current_user.id, class: "form-control" %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+
+  <%= f.hidden_field :total_price, value: sum_total_price_of_cart.sum %>
 
   <%= f.label :customer_name, t(".name") %>
   <%= f.text_field :customer_name, value: current_user.name, class: "form-control" %>
