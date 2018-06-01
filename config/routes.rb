@@ -26,6 +26,8 @@ Rails.application.routes.draw do
     resources :orders, only: :index do
       resources :order_items, only: :index
     end
+    put "approve/:id_order", to: "orders#approve", as: :approve
+    put "reject/:id_order", to: "orders#reject", as: :reject
   end
   resources :carts, only: :index
   get "add_cart/:id_product", to: "carts#add_cart", as: :add_cart
