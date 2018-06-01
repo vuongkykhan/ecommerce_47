@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :find_user, except: %i(index new create)
+  before_action :logged_in_user, except: %i(show new create)
 
   def new
     @user = User.new

@@ -1,4 +1,5 @@
 class CartsController < ApplicationController
+  before_action :logged_in_user, only: :index
   before_action :set_cart
   before_action :find_product, except: :index
   before_action :current_cart, only: :index
