@@ -1,8 +1,12 @@
 en:
+  date:
+    format:
+      default: "%d/%m/%Y"
   shared:
     error_messages:
       contains_error: "The form contain"
       error: "error"
+      oops: "Oops...."
   layouts:
     header:
       home: "Home"
@@ -103,6 +107,8 @@ en:
       form:
         name: "Category name"
         submit: "Submit"
+        product_name: "Product Name"
+        product_image: "Product Image"
       new:
         create: "Create Category"
       create:

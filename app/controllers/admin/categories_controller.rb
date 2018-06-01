@@ -43,7 +43,8 @@ module Admin
     private
 
     def category_pamrams
-      params.require(:category).permit :name
+      params.require(:category).permit :name,
+        products_attributes: %i(id name description image price quantity)
     end
 
     def find_category

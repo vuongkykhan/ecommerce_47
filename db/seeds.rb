@@ -1,4 +1,28 @@
-50.times do
+User.create!(
+  name: "Vuong Ky Khan",
+  email: "vuongkykhan@gmail.com",
+  password: "123456",
+  password_confirmation: "123456",
+  phone: "0123456789",
+  address: "964/30B Lo Gom, Ward 8, District 6",
+  city: "HoChiMinh",
+  country: "VietNam",
+  role: 0
+  )
+
+User.create!(
+  name: "Admin",
+  email: "admin@gmail.com",
+  password: "123456",
+  password_confirmation: "123456",
+  phone: "0123456789",
+  address: "964/30B Lo Gom, Ward 8, District 6",
+  city: "HoChiMinh",
+  country: "VietNam",
+  role: 0
+  )
+
+5.times do
   Category.create!(
     name: Faker::Name.name
     )
@@ -8,7 +32,6 @@ end
   category_ids = Category.all.pluck(:id)
   name = Faker::Name.title
   description = Faker::Lorem.sentence(5)
-  image = "rails.png"
   price = Faker::Number.number(2)
   quantity = Faker::Number.between(1, 10)
   Product.create!(
@@ -16,7 +39,7 @@ end
       name: Faker::Name.name,
       description: description,
       price: price,
-      image: image,
+      image: Rails.root.join("public/uploads/product/image/51/shoes.jpg").open,
       quantity: quantity
     )
 end

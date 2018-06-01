@@ -19,7 +19,9 @@ Rails.application.routes.draw do
   resources :products do
     resources :orders
   end
-  resources :categories, only: :index
+  resources :categories, only: %i(show index) do
+    resources :products, only: :index
+  end
   namespace :admin do
     resources :categories
     resources :products

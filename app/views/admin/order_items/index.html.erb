@@ -18,7 +18,7 @@
       <h4><strong><%= t ".payment_details" %></strong></h4>
       <b><%= t ".bill_amount" %></b><%= t ".currency", price: @order.total_price %>
       <br />
-      <b><%= t ".purchase_date" %></b><%= @order.created_at %>
+      <b><%= t ".purchase_date" %></b><%= l @order.created_at, format: t("date.format.default") %>
     </div>
   </div>
   <div class="row">

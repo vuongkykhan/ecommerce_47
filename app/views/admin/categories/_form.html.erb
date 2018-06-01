@@ -2,6 +2,14 @@
 
   <%= render "shared/error_messages", object: f.object %>
 
+  <%= f.fields_for :products do |ff| %>
+    <%= ff.label :name, t(".product_name") %>
+    <%= ff.text_field :name %>
+
+    <%= ff.label :image, t(".product_image") %>
+    <%= ff.file_field :image %>
+  <% end %>
+
   <%= f.label :name, t(".name") %>
   <%= f.text_field :name, class: "form-control" %>
 

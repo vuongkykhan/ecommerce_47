@@ -42,9 +42,5 @@ module Admin
       @product = Product.find_by id: params[:id]
       valid_object @product
     end
-
-    def load_categories
-      @categories = Category.all
-    end
   end
 end

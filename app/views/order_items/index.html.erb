@@ -16,9 +16,9 @@
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6">
       <h4><strong><%= t ".payment_details" %></strong></h4>
-      <b><%= t ".bill_amount" %></b>
+      <b><%= t ".bill_amount" %></b> <%= t ".currency", price: @order.total_price %>
       <br />
-      <b><%= t ".purchase_date" %></b><%=  %>
+      <b><%= t ".purchase_date" %></b><%= l @order.created_at, format: t("date.format.default") %>
     </div>
   </div>
   <div class="row">
@@ -40,7 +40,7 @@
         </table>
       </div>
       <div class="ttl-amts">
-        <h5> <strong><%= t ".currency", price: @order.total_price %></strong></h5>
+        <h5> <strong><%=  t ".total_amount" %><%= t ".currency", price: @order.total_price %></strong></h5>
       </div>
     </div>
   </div>
