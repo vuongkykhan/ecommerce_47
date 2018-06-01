@@ -136,7 +136,7 @@ en:
         delete: "Delete"
         confirm: "Are you sure?"
       form:
-        category: "Categories"
+        category: "Category"
         name: "Name"
         description: "Description"
         image: "Image"
@@ -149,6 +149,11 @@ en:
         create: "Create Product"
       create:
         create_success: "Product created successfully"
+      edit:
+        edit: "Edit Product"
+      update:
+        edit_success: "Product updated successfully "
+        edit_fail: "Error occurs!"
     orders:
       index:
         orders_list: "Orders List"
