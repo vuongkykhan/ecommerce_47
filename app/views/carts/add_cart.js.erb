@@ -1,6 +1,7 @@
 <% if @product.present? %>
-  alert('<%= t ".alert_success" %>')
-  $("#number_product_cart").html("<%= session[:cart].size %>")
+  alert("<%= t '.alert_success' %>")
+  $("#number_product_cart").html("<%= session[:cart].size %>");
+  $("#number_product_cart").removeClass("hidden");
 <% else %>
-  alert('<%= t ".alert_fail" %>')
+  alert("<%= t '.alert_fail' %>");
 <% end %>
