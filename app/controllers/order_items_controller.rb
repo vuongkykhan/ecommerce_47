@@ -1,5 +1,5 @@
 class OrderItemsController < ApplicationController
-	before_action :load_order, only: :index
+  before_action :load_order, only: :index
 
   def index
     @order_items = OrderItem.find_by_order_id params[:order_id]

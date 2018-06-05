@@ -53,12 +53,6 @@ class OrdersController < ApplicationController
     redirect_to carts_url
   end
 
-  def update_product_quantity order
-    order.order_items.each do |detail|
-      detail.product.decrement!(:quantity, detail.quantity) if detail.persisted?
-    end
-  end
-
   def find_order
     @order = Order.find_by id: params[:id_order]
     valid_object @order
