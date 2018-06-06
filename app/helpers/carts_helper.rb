@@ -8,4 +8,8 @@ module CartsHelper
       (product.quantity_in_cart * product.price).to_i
     end
   end
+
+  def is_empty_cart?
+    session[:cart].nil? || session[:cart].empty?
+  end
 end
