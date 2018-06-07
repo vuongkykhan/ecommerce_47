@@ -1,4 +1,4 @@
-<% if @order.cancelled? %>
-  $('#cancel-order' + <%= @order.id %>).hide();
+<% unless @order.in_progress? %>
+  $('#cancel-order' + <%= @order.id %>).show();
   $('#orders').html('<%= j render @orders %>');
 <% end %>

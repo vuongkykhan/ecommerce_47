@@ -4,6 +4,17 @@
   <td><%= t "order.status.#{order.status}" %></td>
   <td><%= t ".currency", price: order.total_price %></td>
   <td>
-    <%= link_to t(".view"), admin_order_order_items_path(order), class: "btn btn-primary" %>
+    <%= link_to t(".show"), admin_order_order_items_path(order),
+      class: "btn btn-primary" %>
+    <% if order.in_progress? %>
+      <%= link_to admin_approve_path(order.id), remote: true, method: :put,
+        class: "btn btn-success" do %>
+        <%= t ".approve" %> <i class="fa fa-pencil"></i>
+      <% end %>
+      <%= link_to admin_reject_path(order.id), remote: true, method: :put,
+        class: "btn btn-danger" do %>
+        <%= t ".reject" %> <i class="fa fa-eye"></i>
+      <% end %>
+    <% end %>
   </td>
 </tr>

@@ -142,6 +142,10 @@ en:
         order_status: "Status"
         order_total: "Order Total"
         action: "Action"
+      order:
+        show: "Show"
+        approve: "Approve"
+        reject: "Reject"
     order_items:
       index:
         invoice: "Invoice"
