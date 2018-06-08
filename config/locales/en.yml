@@ -124,6 +124,17 @@ en:
     products:
       index:
         list: "Product List"
+        id: "ID"
+        name: "Name"
+        image: "Image"
+        price: "Price"
+        quantity: "Quantity"
+        action: "Action"
+        new: "New Product"
+      product:
+        edit: "Edit"
+        delete: "Delete"
+        confirm: "Are you sure?"
       form:
         category: "Categories"
         name: "Name"

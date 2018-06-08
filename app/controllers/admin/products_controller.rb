@@ -3,7 +3,10 @@ module Admin
     before_action :find_product, except: %i(index new create)
     before_action :load_category, except: %i(index destroy)
 
-    def index; end
+    def index
+      @products = Product.load_product.order_by_id
+        .paginate page: params[:page], per_page: Settings.paginate.per_page
+    end
 
     def new
       @product = Product.new
