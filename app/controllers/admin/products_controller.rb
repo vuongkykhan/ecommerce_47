@@ -1,7 +1,7 @@
 module Admin
   class ProductsController < ApplicationController
     before_action :find_product, except: %i(index new create)
-    before_action :load_category, except: %i(index destroy)
+    before_action :load_categories, except: %i(index destroy)
 
     def index
       @products = Product.load_product.order_by_id
@@ -24,7 +24,7 @@ module Admin
     private
 
     def product_params
-      params.require(:product).permit :category_id, :name, :image, :price, :quantity
+      params.require(:product).permit :category_id, :name, :description, :image, :price, :quantity
     end
 
     def find_product
@@ -32,8 +32,8 @@ module Admin
       valid_object @product
     end
 
-    def load_category
-      @categories = Category.all.map {|x| x.name}
+    def load_categories
+      @categories = Category.all
     end
   end
 end

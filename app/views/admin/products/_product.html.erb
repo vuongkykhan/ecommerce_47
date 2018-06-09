@@ -1,7 +1,7 @@
 <tr>
   <td><%= product.id %></td>
   <td><%= product.name %></td>
-  <td><%= product.image %></td>
+  <td><%= image_tag product.image.url, class: "img_list" %></td>
   <td><%= product.price %></td>
   <td class="text-center"><%= product.quantity %></td>
   <td class="text-center">

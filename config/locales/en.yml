@@ -138,11 +138,13 @@ en:
       form:
         category: "Categories"
         name: "Name"
+        description: "Description"
         image: "Image"
         price: "Price"
         quantity: "Quantity"
         submit: "Submit"
         select: "Select a category"
+        placeholder: "Compose new Product..."
       new:
         create: "Create Product"
       create:
@@ -266,3 +268,4 @@ en:
       in_progress: "Pending"
       completed: "Completed"
       invoiced: "Invoiced"
+  less_than_2mb: "should be less than 2MB"

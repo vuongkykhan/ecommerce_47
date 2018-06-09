@@ -3,10 +3,14 @@
   <%= render "shared/error_messages", object: f.object %>
 
   <%= f.label :category_id, t(".Categories") %>
-  <%= f.select :category, options_for_select(@categories), {prompt: t(".select")}, {class: "form-control"} %>
+  <%= f.collection_select :category_id, @categories, :id, :name, {},
+    class: "form-control" %>
 
   <%= f.label :name, t(".name") %>
   <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.label :description, t(".description") %>
+  <%= f.text_area :description, placeholder: t(".placeholder") %>
 
   <%= f.label :price, t(".price") %>
   <%= f.text_field :price, class: "form-control" %>
@@ -15,7 +19,7 @@
   <%= f.text_field :quantity, class: "form-control" %>
 
   <%= f.label :image, t(".image") %>
-  <%= f.file_field :image, multiple: true %>
+  <%= f.file_field :image %>
 
   <%= f.submit t(".submit"), class: "btn btn-primary" %>
 <% end %>
