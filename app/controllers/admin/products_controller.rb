@@ -21,6 +21,17 @@ module Admin
       end
     end
 
+    def edit; end
+
+    def update
+      if @product.update_attributes product_params
+        flash[:success] = t ".edit_success"
+        redirect_to admin_products_path
+      else
+        render :edit
+      end
+    end
+
     private
 
     def product_params
