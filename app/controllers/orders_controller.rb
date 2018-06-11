@@ -24,6 +24,7 @@ class OrdersController < ApplicationController
             total_price: total_price)
           order_item.save!
         end
+        OrderMailer.create_order(current_user, @order).deliver_now
         create_order_success
       end
     end
@@ -34,6 +35,7 @@ class OrdersController < ApplicationController
 
   def cancel
     @order.cancelled!
+    OrderMailer.cancel_order(current_user, @order).deliver_now
     rollback_quantity @order
     respond_to do |format|
       format.json {}

@@ -1,0 +1,31 @@
+<%= t ".dear", user: @user.name %>
+
+<%= t ".message" %>
+<%= t ".client_info" %>
+<%= t ".name" %> <%= @order.customer_name %>
+<%= t ".address" %> <%= @order.customer_address %>
+
+<%= t ".city" %> <%= @order.customer_city %>
+
+<%= t ".country" %> <%= @order.customer_country %>
+
+<%= t ".call" %> <%= t ".code" %><%= @order.customer_phone %>
+
+<%= t ".payment_details" %>
+<%= t ".bill_amount" %> <%= t "currency.format", price: @order.total_price %>
+
+<%= t ".purchase_date" %> <%= l @order.created_at, format: t("date.format.default") %>
+
+<%= t ".no_number" %>
+<%= t ".items" %>
+<%= t ".quantity" %>
+<%= t ".unit_price" %>
+<%= t ".sub_total" %>
+
+<% @order.order_items.each do |order_item| %>
+  <%= order_item.id %>
+  <%= order_item.product_name %>
+  <%= order_item.quantity %>
+  <%= t "currency.format", price: order_item.unit_price %>
+  <%= t "currency.format", price: order_item.total_price %>
+<% end %>
