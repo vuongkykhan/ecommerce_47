@@ -2,7 +2,7 @@
   <td><%= l order.created_at, format: t("date.format.default") %></td>
   <td><%= order.id %></td>
   <td><%= t "order.status.#{order.status}" %></td>
-  <td><%= t ".currency", price: order.total_price %></td>
+  <td><%= t "currency.format", price: order.total_price %></td>
   <td>
     <%= link_to t(".show"), admin_order_order_items_path(order),
       class: "btn btn-primary" %>

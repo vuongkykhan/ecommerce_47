@@ -1,0 +1,7 @@
+$(document).on( "turbolinks:load ", function () {
+  $( ".cart_link ").click(function () {
+    if ($( "#number_product_cart ").hasClass( "hidden ")) {
+      alert( "<%= I18n.t("shared.error_messages.cart_empty") %> ");
+    }
+  });
+});
