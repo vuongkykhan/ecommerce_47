@@ -1,8 +1,10 @@
 en:
+  error: "Error occurs!"
+  alert_success: "Product deleted successfully!"
   date:
     format:
       default: "%d/%m/%Y"
-    date_time: "%d/%m/%Y %H:%M"
+      date_time: "%d/%m/%Y %H:%M"
   currency:
     format: "$ %{price}"
   shared:

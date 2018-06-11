@@ -14,6 +14,7 @@ class Product < ApplicationRecord
   scope :find_by_name, ->name{where("name like ?", "%#{name}%") if name.present?}
   scope :order_by_id, ->{order id: :desc}
   scope :load_product_by_category, ->category_id{where("category_id = ?", category_id)}
+  enum del_flash: [:active, :inactive]
 
   private
 

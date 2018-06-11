@@ -15,7 +15,11 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree .
 //= require cart
+//= require delete_product
 //= require sweetalert2
 //= require sweet-alert2-rails
+//= require i18n
+//= require i18n.js
+//= require i18n/translations
+//= require_tree .
