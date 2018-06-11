@@ -1,19 +1,28 @@
 <tr>
-  <td><%= l order.created_at, format: t("date.format.default") %></td>
-  <td><%= order.id %></td>
-  <td><%= t "order.status.#{order.status}" %></td>
+  <td><%= order_counter + Settings.number %></td>
+  <td><%= order.customer_name %></td>
+  <td><%= order.customer_address %></td>
+  <td><%= order.customer_phone %></td>
+  <td><%= l order.created_at, format: t("date.format.date_time") %></td>
+  <td  class="<%= add_cus_css order.status %>">
+    <strong>
+      <%= t "order.status.#{order.status}" %>
+    </strong>
+  </td>
   <td><%= t "currency.format", price: order.total_price %></td>
   <td>
-    <%= link_to t(".show"), admin_order_order_items_path(order),
-      class: "btn btn-primary" %>
+    <%= link_to admin_order_order_items_path(order),
+      class: "btn btn-primary" do %>
+      <i class="fa fa-eye"></i>&nbsp;<%= t(".show") %>
+    <% end %>
     <% if order.in_progress? %>
       <%= link_to admin_approve_path(order.id), remote: true, method: :put,
         class: "btn btn-success" do %>
-        <%= t ".approve" %> <i class="fa fa-pencil"></i>
+        <i class="fa fa-pencil"></i>&nbsp;<%= t ".approve" %>
       <% end %>
       <%= link_to admin_reject_path(order.id), remote: true, method: :put,
         class: "btn btn-danger" do %>
-        <%= t ".reject" %> <i class="fa fa-eye"></i>
+        <i class="fa fa-remove"></i>&nbsp;<%= t ".reject" %>
       <% end %>
     <% end %>
   </td>
